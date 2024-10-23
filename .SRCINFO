@@ -15,6 +15,7 @@ pkgbase = python-wheel
 	makedepends = python-build
 	makedepends = python-flit-core
 	makedepends = python-installer
+	depends = python>=3.12
 	depends = python<3.13
 	depends = python-packaging
 	optdepends = python-keyring: for wheel.signatures
