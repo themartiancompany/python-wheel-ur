@@ -13,6 +13,9 @@ _pyver="$( \
     awk \
       '{print $2}')"
 _pymajver="${_pyver%.*}"
+_pyminver="${_pymajver#*.}"
+_pynextver="${_pymajver%.*}.$(( \
+  ${_pyminver} + 1))"
 _pkg=wheel
 pkgname="${_py}-${_pkg}"
 pkgver=0.42.0
@@ -24,7 +27,7 @@ arch=(
 url="https://pypi.python.org/pypi/${_pkg}"
 license=('MIT')
 depends=(
-  "${_py}>=${_pymajver}"
+  "${_py}<${_pynextver}"
   "${_py}-packaging"
 )
 optdepends=(
