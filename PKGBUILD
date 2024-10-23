@@ -27,6 +27,7 @@ arch=(
 url="https://pypi.python.org/pypi/${_pkg}"
 license=('MIT')
 depends=(
+  "${_py}>=${_pymajver}"
   "${_py}<${_pynextver}"
   "${_py}-packaging"
 )
@@ -61,7 +62,7 @@ sha512sums=(
 
 prepare() {
   local \
-    _metadata_cmd \ 
+    _metadata_cmd \
     _metadata_pattern \
     _metadata_repl \
     _tags_cmd \
@@ -75,7 +76,7 @@ prepare() {
     _other_tags_repl
   _metadata_pattern="from .vendored.packaging.requirements import Requirement"
   _metadata_repl="from packaging.requirements import Requirement"
-  _metadata_cmd= "s/${_metadata_pattern}/${_metadata_repl}/"
+  _metadata_cmd="s/${_metadata_pattern}/${_metadata_repl}/"
   _tags_pattern="from .vendored.packaging import tags"
   _tags_repl="from packaging import tags"
   _tags_cmd="s/${_tags_pattern}/${_tags_repl}/"
