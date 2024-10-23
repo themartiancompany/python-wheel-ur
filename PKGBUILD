@@ -64,13 +64,13 @@ prepare() {
     _metadata_cmd \ 
     _metadata_pattern \
     _metadata_repl \
-    _tags_cmd \ 
+    _tags_cmd \
     _tags_pattern \
     _tags_repl \
-    _version_cmd \ 
+    _version_cmd \
     _version_pattern \
     _version_repl \
-    _other_tags_cmd \ 
+    _other_tags_cmd \
     _other_tags_pattern \
     _other_tags_repl
   _metadata_pattern="from .vendored.packaging.requirements import Requirement"
